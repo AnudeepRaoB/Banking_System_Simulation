@@ -2,8 +2,10 @@
 
 A web-based banking application that allows users to manage their accounts, perform transactions, and track their banking history in real-time.
 
-## Features
+## Demo
+Watch the Demo Video: https://drive.google.com/file/d/1TvQFpiEsf1um2oMB34DjKbMV2R7P4gpw/view?usp=sharing
 
+## Features
 - User Authentication: Secure registration and login system.
 - Account Management: View current balance and account details.
 - Banking Operations: Deposit, withdraw, and transfer funds.
@@ -11,20 +13,17 @@ A web-based banking application that allows users to manage their accounts, perf
 - Data Validation: Prevents self-transfers and ensures recipient accounts exist.
 
 ## Technology Stack
-
 - Backend: Java 21 with Javalin Framework.
 - Frontend: HTML5, Vanilla CSS, and JavaScript.
 - Database: MySQL.
 - Build Tool: Maven.
 
 ## Prerequisites
-
 - Java Development Kit (JDK) 21 or higher.
 - Apache Maven.
 - MySQL Server.
 
 ## Installation
-
 1. Clone the repository to your local machine.
 2. Ensure your MySQL server is running.
 3. Create a database named `banking_sys` and execute the provided `banking_sys.sql` file to set up the tables.
