@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank | Online Banking</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <section id="login-section" class="active auth-card">
+            <div class="logo">
+                Bank
+            </div>
+            <form id="login-form">
+                <div class="input-group">
+                    <label>Username</label>
+                    <input type="text" id="username" placeholder="Enter Username" required>
+                </div>
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" id="password" placeholder="Enter Password" required>
+                </div>
+                <button type="submit" class="btn-primary">Sign In</button>
+                <p class="auth-toggle">Don't have an account? <a href="#" id="to-register">Register here</a></p>
+            </form>
+        </section>
+        <section id="register-section" class="auth-card">
+            <div class="logo">
+                Create Account
+            </div>
+            <form id="register-form">
+                <div class="input-group">
+                    <label>Full Name</label>
+                    <input type="text" id="reg-holder" placeholder="John Doe" required>
+                </div>
+                <div class="input-group">
+                    <label>Username</label>
+                    <input type="text" id="reg-username" placeholder="john_doe" required>
+                </div>
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" id="reg-password" placeholder="••••••••" required>
+                </div>
+                <div class="input-group">
+                    <label>Initial Deposit (₹)</label>
+                    <input type="number" id="reg-balance" value="1000" min="500" required>
+                </div>
+                <div class="input-group">
+                    <label>Account Type</label>
+                    <select id="reg-type"
+                        style="width:100%; padding:12px; border:1px solid var(--border); border-radius:8px">
+                        <option value="SAVINGS">Savings Account</option>
+                        <option value="CURRENT">Current Account</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary">Create Account</button>
+                <p class="auth-toggle">Already have an account? <a href="#" id="to-login">Login here</a></p>
+            </form>
+        </section>
+        <section id="dashboard-section">
+            <header class="dash-header">
+                <div class="logo" style="margin:0">Bank</div>
+                <div class="user-info">
+                    <span id="user-greeting">Hi, User</span>
+                    <button id="logout-btn" class="btn-logout">Logout</button>
+                </div>
+            </header>
+            <div class="balance-card">
+                <h3>Total Balance</h3>
+                <div class="amount" id="balance-display">₹0.00</div>
+                <div style="margin-top:10px; font-size:16px; font-weight:700; opacity:1">Account: <span
+                        id="acc-no-display">---</span> | <span id="acc-type-display">---</span></div>
+            </div>
+            <div class="actions-container">
+                <div class="action-card">
+                    <h4>Banking Actions</h4>
+                    <form id="action-form">
+                        <div class="input-group">
+                            <label>Select Action</label>
+                            <select id="action-type" required>
+                                <option value="DEPOSIT">Deposit Funds</option>
+                                <option value="WITHDRAW">Withdraw Funds</option>
+                                <option value="TRANSFER">Transfer Money</option>
+                            </select>
+                        </div>
+                        <div id="transfer-extra" style="display:none">
+                            <div class="input-group">
+                                <label>Recipient Account No</label>
+                                <input type="text" id="action-to" placeholder="e.g. ACC123456">
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label>Amount (₹)</label>
+                            <input type="number" step="0.01" id="action-amount" placeholder="0.00" required>
+                        </div>
+                        <button type="submit" class="btn-primary" id="action-submit">Process Transaction</button>
+                    </form>
+                </div>
+            </div>
+            <div class="history-section">
+                <h4>Transaction History</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Type/Details</th>
+                            <th>Amount</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="history-body">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+    <div id="toast-container"></div>
+    <script src="script.js"></script>
+</body>
+
+</html>
