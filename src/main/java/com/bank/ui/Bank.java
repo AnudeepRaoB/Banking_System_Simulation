@@ -6,19 +6,6 @@ import io.javalin.Javalin;
 
 public class Bank {
     public static void main(String[] args) {
-        try (java.sql.Connection conn = com.bank.util.DBUtil.getConnection();
-                java.sql.Statement stmt = conn.createStatement()) {
-            try {
-                stmt.execute("ALTER TABLE Transactions ADD COLUMN recipient_acc VARCHAR(20)");
-            } catch (Exception e) {
-            }
-            try {
-                stmt.execute("ALTER TABLE Transactions ADD COLUMN recipient_name VARCHAR(100)");
-            } catch (Exception e) {
-            }
-        } catch (Exception e) {
-            System.err.println("Schema check error: " + e.getMessage());
-        }
         BankDAO dao = new BankDAO();
         var app = Javalin.create(config -> {
             config.staticFiles.add("/static");
